@@ -1,0 +1,8 @@
+{
+    "api": "vunb/kites#api",
+    "spa": "vunb/kites#spa",
+    "cms": "vunb/kites#cms",
+    "chat": "vunb/kites#chat",
+    "chatbot": "vntk/chatbot",
+    "videocall": "vunb/kites#videocall"
+}

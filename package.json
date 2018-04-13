@@ -1,0 +1,39 @@
+{
+  "name": "@kites/cli",
+  "version": "1.0.0",
+  "description": "Command line interface for Kites Framework",
+  "main": "src/init.js",
+  "bin": {
+    "kites": "./bin/kites.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vunb/kites-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "kites-framework",
+    "web-framework",
+    "api-framework",
+    "application-templates"
+  ],
+  "author": "vunb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vunb/kites-cli/issues"
+  },
+  "homepage": "https://github.com/vunb/kites-cli#readme",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "download-git-repo": "^1.0.2",
+    "lodash": "^4.17.5"
+  },
+  "files": [
+    "bin",
+    "src"
+  ]
+}

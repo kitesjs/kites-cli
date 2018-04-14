@@ -1,5 +1,8 @@
 {
-    "api": "vunb/kites#api",
+    "basic": "vunb/kites",
+    "apidoc": "vunb/kites#apidoc",
+    "express": "vunb/kites#express",
+    "restful": "vunb/kites#restful",
     "spa": "vunb/kites#spa",
     "cms": "vunb/kites#cms",
     "chat": "vunb/kites#chat",

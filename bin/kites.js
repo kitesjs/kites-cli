@@ -45,7 +45,7 @@ program
 program
     .command('init [name]')
     .option('-d --directory [dir]', 'app directory', '.')
-    .option('-t --template [template]', 'template [api]', 'api')
+    .option('-t --template [template]', 'template [basic]', 'basic')
     .description('Init a new kites project')
     .alias('i')
     .action(function (name, opts) {

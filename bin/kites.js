@@ -45,7 +45,7 @@ program
 program
     .command('init [name]')
     .option('-d --directory [dir]', 'app directory', '.')
-    .option('-t --template [template]', 'template [basic]', 'basic')
+    .option('-t --template [template]', 'app template', 'basic')
     .description('Init a new kites project')
     .alias('i')
     .action(function (name, opts) {
@@ -68,7 +68,6 @@ program
         })
     })
     .on("--help", function () {
-        console.log('  Examples:');
         console.log(`
             Examples:
                 $ kites init my-app -t chatbot

@@ -4,7 +4,8 @@
 const _ = require('lodash')
 const chalk = require('chalk')
 const program = require('commander')
-const init = require('../src/app/init.js')
+const init = require('../src/app/init')
+const up = require('../src/app/up')
 const version = require('../package').version
 
 var NOOP = function () {};
@@ -72,6 +73,37 @@ program
             Examples:
                 $ kites init my-app -t chatbot
                 $ kites init my-app -t chatbot -d path/to/working/directory
+        `);
+    })
+
+/*
+ * Startup kites project
+ * */
+program
+    .command('up [name]')
+    .description('Startup kites project')
+    .alias('i')
+    .action(function (name) {
+        // init kites app
+        up(name).then((app) => {
+            console.log(`
+            $ kites up success!
+                name: ${chalk.green(app.name)}            
+                template: ${chalk.green(app.template)}            
+                directory: ${chalk.green(app.path)}            
+            `)
+        }).catch((err) => {
+            console.log(`
+            $ Kites up got an error, please report with these information:
+                @kite/cli (version): ${chalk.green(version)}
+                detail: ${chalk.red(err)}
+            `)
+        })
+    })
+    .on("--help", function () {
+        console.log(`
+            Examples:
+                $ kites up [my-app]
         `);
     })
 

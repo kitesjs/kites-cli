@@ -1,4 +1,5 @@
 'use strict'
+const fs = require('fs')
 const path = require('path')
 const exec = require('child_process').exec
 
@@ -11,15 +12,22 @@ const exec = require('child_process').exec
 function cmdUp(app) {
 
     const cwd = path.join(process.cwd(), (app || '.'))
-    const pkg = require(path.join(cwd, 'package.json'))
+    const pkgInfo = path.join(cwd, 'package.json')
+
+    if (fs.existsSync(pkgInfo)) {
+        return Promise.reject('Not Found: ' + pkgInfo)
+    }
+
+    const pkg = require(pkgInfo)
     var script = pkg.scripts.start
+    var devEnv = process.env
+
+    devEnv.NODE_ENV = 'development'
 
     if (!script) {
         // default
         script = 'node app.js'
     }
-    var devEnv = process.env
-    devEnv.NODE_ENV = 'development'
 
     const child = exec(script, {
         cwd: cwd,

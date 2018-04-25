@@ -82,7 +82,6 @@ program
 program
     .command('up [name]')
     .description('Startup kites project')
-    .alias('i')
     .action(function (name) {
         // init kites app
         up(name).then((app) => {

@@ -14,7 +14,7 @@ function cmdUp(app) {
     const cwd = path.join(process.cwd(), (app || '.'))
     const pkgInfo = path.join(cwd, 'package.json')
 
-    if (fs.existsSync(pkgInfo)) {
+    if (!fs.existsSync(pkgInfo)) {
         return Promise.reject('Not Found: ' + pkgInfo)
     }
 

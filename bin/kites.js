@@ -46,7 +46,7 @@ program
 program
     .command('init [name]')
     .option('-d --directory [dir]', 'app directory', '.')
-    .option('-t --template [template]', 'app template', 'basic')
+    .option('-t --template [template]', 'app template', 'mvc')
     .description('Init a new kites project')
     .alias('i')
     .action(function (name, opts) {
@@ -71,8 +71,8 @@ program
     .on("--help", function () {
         console.log(`
             Examples:
-                $ kites init my-app -t chatbot
-                $ kites init my-app -t chatbot -d path/to/working/directory
+                $ kites init my-app --template mvc
+                $ kites init my-app --template mvc -d path/to/working/directory
         `);
     })
 

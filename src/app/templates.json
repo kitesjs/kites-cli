@@ -1,5 +1,6 @@
 {
-    "basic": "vunb/kites",
+    "mvc": "vunb/kites",
+    "basic": "vunb/kites#basic",
     "apidoc": "vunb/kites#apidoc",
     "express": "vunb/kites#express",
     "restful": "vunb/kites#restful",
@@ -7,5 +8,6 @@
     "cms": "vunb/kites#cms",
     "chat": "vunb/kites#chat",
     "chatbot": "vntk/chatbot",
-    "videocall": "vunb/kites#videocall"
+    "videocall": "nodevn/kites-videocall",
+    "electron": "nodevn/kites-electron"
 }

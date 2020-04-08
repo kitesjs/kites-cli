@@ -1,5 +1,5 @@
 {
-  "mvc": "vunb/kites-template-mvc#stable",
+  "starter": "kitesjs/typescript-starter",
   "basic": "vunb/kites#basic",
   "apidoc": "vunb/kites#apidoc",
   "express": "vunb/kites#express",

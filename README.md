@@ -17,7 +17,7 @@ Command line interface for Kites Framework
 
 ```bash
 # generate a new app
-kites init my-project --template mvc
+kites init my-project
 
 # install dependencies and startup program
 cd my-project
@@ -50,14 +50,11 @@ Commands:
 
 ### Built-in templates:
 
-* [kites-template-mvc](https://github.com/vunb/kites-template-mvc) - Assembling all into complete ship (default)
-* [kites-template-basic](https://github.com/vunb/kites) - Template for building from scratch
-* [kites-template-apidoc](https://github.com/vunb/kites) - Template for API Documentation
-* [kites-template-express](https://github.com/vunb/kites) - Template for Express Application
-* [kites-template-restful](https://github.com/vunb/kites) - Template for generating a RESTful API Server, *inprogress*
-* [kites-template-cms](https://github.com/vunb/kites-template-mvc) - Template for generating a Content Management System (CMS), *inprogress*
-* [kites-template-chat](https://github.com/vunb/kites-template-mvc) - Real-time Chat with RoomRTC, *inprogress*
-* [kites-template-videocall](https://github.com/vunb/kites-template-mvc) - Real-time Video Call with RoomRTC, *inprogress*
+* [x] [typescript-starter](https://github.com/kitesjs/typescript-starter) - Kites Project Starter with Typescript (default)
+* [ ] [project-docs](https://github.com/vunb/kites) - Template for building project document
+* [ ] [kites-template-cms](https://github.com/kitesjs/freecms) - Template for generating a Content Management System (CMS), *inprogress*
+* [ ] [kites-template-chat](#) - Real-time Chat with RoomRTC, *inprogress*
+* [ ] [kites-template-videocall](#) - Real-time Video Call with RoomRTC, *inprogress*
 
 # License
 

@@ -28,8 +28,6 @@ function getMainApp(app) {
   // check app script exists!
   if (!fs.existsSync(script) && !fs.existsSync(script + '.js') && !fs.existsSync(script + '.ts')) {
     throw new Error('Script not found: ' + script);
-  } else if (path.extname('.ts')) {
-    // TODO: register ts-node
   }
 
   return { script, cwd };
@@ -69,7 +67,13 @@ function cmdUp(app, options) {
       })
     }
 
-    const monitor = spawn(process.execPath, [script], processOpts)
+    const scriptArgs = [script];
+    if (path.extname(script) === '.ts') {
+      // register ts-node as development enviroment
+      scriptArgs.splice(0, 0, '-r', 'ts-node/register')
+    }
+
+    const monitor = spawn(process.execPath, scriptArgs, processOpts)
 
     monitor.on('exit', function (code, signal) {
       if (code === 0) {

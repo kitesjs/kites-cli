@@ -13,7 +13,7 @@ Command line interface for Kites Framework
 
 # Usage
 
-### Run the following command to init a new kites application
+### Create a new kites application
 
 ```bash
 # generate a new app
@@ -23,6 +23,29 @@ kites init my-project --template mvc
 cd my-project
 npm install
 npm start
+```
+
+### Startup kites application
+
+```bash
+$ kites up app.js
+```
+
+### Options
+
+```yaml
+$ kites --help
+Usage: kites [command] [options]
+
+Options:
+  -v, --version            output the version number
+  -h, --help               output usage information
+
+Commands:
+  version
+  init|i [options] [name]  Init a new kites project
+  up [options] [script]    Startup kites project
+  *
 ```
 
 ### Built-in templates:

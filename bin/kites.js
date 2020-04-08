@@ -8,7 +8,7 @@ const init = require('../src/app/init')
 const up = require('../src/app/up')
 const version = require('../package').version
 
-var NOOP = function () {};
+var NOOP = function () { };
 var help = function () {
     // Allow us to display help(), but omit the wildcard (*) command.
     program.commands = _.reject(program.commands, {
@@ -19,7 +19,7 @@ var help = function () {
 
 /**
  * Normalize cli version argument, i.e.
- * 
+ *
  * $ kites -v
  * $ kites -V
  * $ kites --version
@@ -54,9 +54,9 @@ program
         init(name, opts.directory, opts.template).then((app) => {
             console.log(`
             $ kites init success!
-                name: ${chalk.green(app.name)}            
-                template: ${chalk.green(app.template)}            
-                directory: ${chalk.green(app.path)}            
+                name: ${chalk.green(app.name)}
+                template: ${chalk.green(app.template)}
+                directory: ${chalk.green(app.path)}
             `)
         }).catch((err) => {
             console.log(`
@@ -80,29 +80,34 @@ program
  * Startup kites project
  * */
 program
-    .command('up [name]')
+    .command('up [script]')
+    .option('-l --log [logFile]', 'log file name')
+    .option('-p --pid [pidFile]', 'process id file name')
+    .option('-w --cwd [workDir]', 'current working directory')
+    .option('-d --daemon [startAsDaemon]', 'start SCRIPT as a daemon', false)
+    .option('-c --config [loadConfig]', 'load config file', true)
     .description('Startup kites project')
-    .action(function (name) {
-        // init kites app
-        up(name).then((app) => {
-            console.log(`
-            $ kites up success!
-                name: ${chalk.green(app.name)}            
-                template: ${chalk.green(app.template)}            
-                directory: ${chalk.green(app.path)}            
-            `)
-        }).catch((err) => {
-            console.log(`
-            $ Kites up got an error, please report with these information:
-                @kite/cli (version): ${chalk.green(version)}
-                detail: ${chalk.red(err)}
-            `)
-        })
+    .action(function (script, opts) {
+        up(script, opts)
+            .then((info) => {
+                console.log(`
+                $ kites [up] success!
+                    workDir: ${chalk.green(info.workDir)}
+                    script: ${chalk.green(info.name)}
+                    daemon: ${chalk.green(info.daemon)}
+                `)
+            }).catch((err) => {
+                console.log(`
+                $ Kites up got an error, please report with these information:
+                    @kite/cli (version): ${chalk.green(version)}
+                    detail: ${chalk.red(err)}
+                `)
+            })
     })
     .on("--help", function () {
         console.log(`
             Examples:
-                $ kites up [my-app]
+                $ kites up [your-app-script]
         `);
     })
 
@@ -115,7 +120,7 @@ program
  */
 program.parse(process.argv)
 
-// NO_COMMAND_SPECIFIED 
+// NO_COMMAND_SPECIFIED
 if (!program.args.length) {
     program.help()
 }

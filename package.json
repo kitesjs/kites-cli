@@ -27,10 +27,13 @@
   },
   "homepage": "https://github.com/vunb/kites-cli#readme",
   "dependencies": {
+    "@kites/common": "^1.2.0",
+    "@kites/core": "^1.2.0",
     "chalk": "^2.3.2",
     "commander": "^2.15.1",
     "download-git-repo": "^1.0.2",
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "utile": "^0.3.0"
   },
   "files": [
     "bin",

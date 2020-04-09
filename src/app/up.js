@@ -77,9 +77,9 @@ function cmdUp(app, options) {
 
     monitor.on('exit', function (code, signal) {
       if (code === 0) {
-        console.log(`${chalk.green('info:')} The app is stopped with success code!`);
+        console.log(`${chalk.green('kites')}: The app is stopped with success code!`);
       } else {
-        console.error(`kites: child process exited with code: ${code} and signal ${signal}`)
+        console.log(`${chalk.red('kites')}: The app is stopped with code: ${code}` + (!signal ? '' : `and signal: ${signal}`))
       }
     })
 
@@ -94,6 +94,12 @@ function cmdUp(app, options) {
       // make sure the monitor is unref() and does not prevent the
       // exit of the current process
       monitor.unref();
+    }  else {
+      process.on('SIGINT', function() {
+        console.log(`${chalk.red('kites')}: The program ended!`)
+        // const error = false;
+        // process.exit(error ? 1 : 0);
+     });
     }
 
     return Promise.resolve({

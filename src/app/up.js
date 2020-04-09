@@ -22,14 +22,19 @@ function getMainApp(app) {
     }
   }
 
-  console.log(`App script is starting: ${chalk.green(main)}`)
-  const script = path.resolve(process.cwd(), main);
+  let script = path.resolve(process.cwd(), main);
+  const isScriptExistent = fs.existsSync(script);
 
   // check app script exists!
-  if (!fs.existsSync(script) && !fs.existsSync(script + '.js') && !fs.existsSync(script + '.ts')) {
+  if (!isScriptExistent && !fs.existsSync(script + '.js') && !fs.existsSync(script + '.ts')) {
     throw new Error('Script not found: ' + script);
+  } else if (!isScriptExistent && fs.existsSync(script + '.js')) {
+    script += '.js';
+  } else if (!isScriptExistent && fs.existsSync(script + '.ts')) {
+    script += '.ts';
   }
 
+  console.log(`App script is starting: (${chalk.green(main)}) ${script}`)
   return { script, cwd };
 }
 
@@ -49,7 +54,8 @@ function cmdUp(app, options) {
     const pidFile = options.pidFile || (pid + '.pid');
     const workDir = options.workDir || cwd;
 
-    console.log(`$ starting: ${chalk.green(script)}, as a daemon: ${options.daemon}, pid: ${pidFile}`)
+    const scriptName = path.basename(script);
+    console.log(`$ starting: (${chalk.green(scriptName)}) as a daemon: ${options.daemon}, pid: ${pidFile}`)
 
     const processOpts = {
       cwd: workDir,

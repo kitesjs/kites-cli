@@ -26,6 +26,7 @@ function getMainApp(app) {
   const isScriptExistent = fs.existsSync(script);
 
   // check app script exists!
+  // TODO: Support load json config from kites.config.json
   if (!isScriptExistent && !fs.existsSync(script + '.js') && !fs.existsSync(script + '.ts')) {
     throw new Error('Script not found: ' + script);
   } else if (!isScriptExistent && fs.existsSync(script + '.js')) {

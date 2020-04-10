@@ -1,8 +1,7 @@
 'use strict'
 const path = require('path')
-const chalk = require('chalk')
 const download = require('download-git-repo')
-const templates = require('./templates')
+const templates = require('../lib/templates')
 
 /**
  * Initialize a new project with Kites Framework

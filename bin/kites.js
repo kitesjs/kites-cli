@@ -4,8 +4,8 @@
 const _ = require('lodash')
 const chalk = require('chalk')
 const program = require('commander')
-const init = require('../src/app/init')
-const up = require('../src/app/up')
+const init = require('../src/cmd/init')
+const up = require('../src/cmd/up')
 const version = require('../package').version
 
 var NOOP = function () { };

@@ -1,6 +1,6 @@
 {
   "name": "@kites/cli",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Command line interface for Kites Framework",
   "bin": {
     "kites": "./bin/kites.js"
@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/vunb/kites-cli#readme",
   "dependencies": {
-    "@kites/common": "^1.2.1",
-    "@kites/core": "^1.2.1",
+    "@kites/common": "^1.2.2",
+    "@kites/core": "^1.2.2",
     "chalk": "^2.3.2",
     "commander": "^2.15.1",
     "download-git-repo": "^1.0.2",

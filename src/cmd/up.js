@@ -113,6 +113,8 @@ function cmdUp(app, options) {
       name: script,
       workDir: workDir,
       daemon: options.daemon,
+      logFile,
+      pidFile,
     })
   } catch (error) {
     return Promise.reject(error);

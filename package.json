@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/vunb/kites-cli#readme",
   "dependencies": {
-    "@kites/common": "^1.2.2",
-    "@kites/core": "^1.2.2",
+    "@kites/common": "^1.2.3",
+    "@kites/core": "^1.2.3",
     "chalk": "^2.3.2",
     "commander": "^2.15.1",
     "download-git-repo": "^1.0.2",

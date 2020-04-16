@@ -10,12 +10,12 @@ function getMainApp(app) {
   let main = app;
   let cwd = process.cwd();
   if (!app) {
-    const pkgInfo = path.join(cwd, 'package.json')
+    // const pkgInfo = path.join(cwd, 'package.json')
 
-    if (fs.existsSync(pkgInfo) && require(pkgInfo).main) {
-      main = require(pkgInfo).main
-      console.log(`App script is detected in package info: ${chalk.green(main)}`)
-    }
+    // if (fs.existsSync(pkgInfo) && require(pkgInfo).main) {
+    //   main = require(pkgInfo).main
+    //   console.log(`App script is detected in package info: ${chalk.green(main)}`)
+    // }
     if (!main) {
       // use default elevator @kites/cli/main script.
       main = path.resolve(__dirname, '../main.js');
@@ -35,7 +35,7 @@ function getMainApp(app) {
     script += '.ts';
   }
 
-  console.log(`App script is starting: (${chalk.green(main)}) ${script}`)
+  console.log(`App script is starting: ${chalk.green(main)}`)
   return { script, cwd };
 }
 

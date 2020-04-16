@@ -1,7 +1,8 @@
 const kites = require('@kites/core');
 
 kites.engine({
-  loadConfig: true
+  loadConfig: true,
+  appDirectory: process.cwd(),
 })
   .init()
   .then(app => {

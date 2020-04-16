@@ -1,12 +1,13 @@
 {
   "starter": "kitesjs/typescript-starter",
+  "docsify": "kitesjs/kites-docsify",
+  "cms": "kitesjs/freecms",
   "basic": "vunb/kites#basic",
   "apidoc": "vunb/kites#apidoc",
   "express": "vunb/kites#express",
   "restful": "vunb/kites#restful",
   "spa": "vunb/kites#spa",
-  "cms": "vunb/kites#cms",
-  "chat": "vunb/kites#chat",
+  "chitchat": "vunb/kites#chat",
   "chatbot": "vntk/chatbot",
   "videocall": "nodevn/kites-videocall",
   "electron": "nodevn/kites-electron"

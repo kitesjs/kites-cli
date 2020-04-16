@@ -50,11 +50,12 @@ Commands:
 
 ### Built-in templates:
 
-* [x] [typescript-starter](https://github.com/kitesjs/typescript-starter) - Kites Project Starter with Typescript (default)
-* [ ] [project-docs](https://github.com/vunb/kites) - Template for building project document
-* [ ] [kites-template-cms](https://github.com/kitesjs/freecms) - Template for generating a Content Management System (CMS), *inprogress*
-* [ ] [kites-template-chat](#) - Real-time Chat with RoomRTC, *inprogress*
-* [ ] [kites-template-videocall](#) - Real-time Video Call with RoomRTC, *inprogress*
+* [x] `starter`: Template project starter with Typescript (default), ([repo](https://github.com/kitesjs/typescript-starter))
+* [x] `docsify`: Template webserver for documentation site generator, ([repo](https://github.com/kitesjs/kites-docsify))
+* [ ] `cms`: Template for generating a Content Management System (CMS), *inprogress*, ([repo](https://github.com/kitesjs/freecms))
+* [ ] `chitchat`: Real-time Chat with RoomRTC, *inprogress*
+* [ ] `videocall`: Real-time Video Call with RoomRTC, *inprogress*
+* [ ] `chatbot`: Real-time Chat with RoomRTC, *inprogress*
 
 # License
 
